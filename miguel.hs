@@ -1,4 +1,3 @@
-
 update::[a] -> Int -> a -> [a]
 update xs i j= first ++ [j] ++ second
                where first = take (i) xs 
@@ -11,4 +10,4 @@ set_true (x:xs) y = set_true xs updated
 
 miguel_sort::[Int] -> [Int] 
 miguel_sort xs = map (\x -> x-1) .fst . unzip . filter (\(x, y) -> y == True). zip [1..(length lol)] $ lol
-                 where lol = set_true xs $ take 100 $ repeat False
+                 where lol = set_true xs $ take (2^32) $ repeat False
